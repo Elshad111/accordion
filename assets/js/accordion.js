@@ -1,6 +1,6 @@
 "use strict";
 window.onload = function(){
-	let accordion = new Accordion([]);
+	let accordion = new Accordion(["General", "Title", "Legend", "Axis X", "Axis Y", "Plot area"]);
 	accordion.accordionInit();
 	let accordion2 = new Accordion(["General", "Title", "Legend", "Axis X", "Axis Y", "Plot area"],  {
 		container: 'accordion2'
