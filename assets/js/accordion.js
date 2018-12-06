@@ -56,8 +56,8 @@ Accordion.prototype.accordionShow = function(options){
 			Array.prototype.forEach.call(itemContent, function(itemContent) {
 				itemContent.classList.remove(_this.contentShow);
 			});
-			this.classList.toggle(_this.titleShow);
-			this.nextSibling.classList.toggle(_this.contentShow);
+			this.classList.add(_this.titleShow);
+			this.nextSibling.classList.add(_this.contentShow);
 		});
 	}
 }
