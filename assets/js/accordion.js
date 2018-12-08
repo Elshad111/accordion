@@ -50,11 +50,11 @@ Accordion.prototype.accordionShow = function(options){
 	let _this = this;
 	for(let i = 0; i < itemTitle.length; i++){
 		itemTitle[i].addEventListener('click', function(){
-			Array.prototype.forEach.call(itemTitle, function(itemTitle) {
-			    itemTitle.classList.remove(_this.titleShow);
+			itemTitle.forEach.call(itemTitle, function(itemTitle){
+			  itemTitle.classList.remove(_this.titleShow);
 			});
-			Array.prototype.forEach.call(itemContent, function(itemContent) {
-				itemContent.classList.remove(_this.contentShow);
+			itemContent.forEach.call(itemContent, function(itemContent){
+			  itemContent.classList.remove(_this.contentShow);
 			});
 			this.classList.add(_this.titleShow);
 			this.nextSibling.classList.add(_this.contentShow);
