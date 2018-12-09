@@ -47,17 +47,17 @@ Accordion.prototype.drawAccordionElements = function(arr, options){
 Accordion.prototype.accordionShow = function(options){
 	let itemTitle = document.querySelectorAll('.'+this.container+' .'+this.accordionTitle);
 	let itemContent = document.querySelectorAll('.'+this.container+' .'+this.accordionContent);
+	let active;
 	let _this = this;
-	for(let i = 0; i < itemTitle.length; i++){
-		itemTitle[i].addEventListener('click', function(){
-			itemTitle.forEach.call(itemTitle, function(itemTitle){
-			  itemTitle.classList.remove(_this.titleShow);
-			});
-			itemContent.forEach.call(itemContent, function(itemContent){
-			  itemContent.classList.remove(_this.contentShow);
-			});
+	itemTitle.forEach(function(item){
+		item.addEventListener('click', function(){
 			this.classList.add(_this.titleShow);
-			this.nextSibling.classList.add(_this.contentShow);
+			this.nextElementSibling.classList.add(_this.contentShow);
+			if(active){
+				active.classList.remove(_this.titleShow);
+     			active.nextElementSibling.classList.remove(_this.contentShow);
+			}
+			active = (active === this) ? 0 : this;
 		});
-	}
+	});
 }
