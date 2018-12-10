@@ -1,9 +1,9 @@
 *{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box; 
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {  margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
@@ -45,7 +45,7 @@ a, u {
 }
 
 p{
-	-webkit-margin-before: 0em;
+    -webkit-margin-before: 0em;
     -webkit-margin-after: 0em;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
@@ -76,14 +76,14 @@ ol {
 body{
     position: relative;
     width: 100%;
-	overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 .wrapper{
-	width: 100%;
-	position: relative;
-	min-height: 100vh;
-	background: #fff;
+    width: 100%;
+    position: relative;
+    min-height: 100vh;
+    background: #fff;
 }
 
 .accordion{
@@ -125,6 +125,8 @@ body{
     top: 25px;
     right: 20px;
     font-weight: bold;
+    z-index: 5;
+    transition: all .5s ease-out
 }
 
 .accordion-item-content{
@@ -145,6 +147,16 @@ body{
     background: #fafafa;
     border-top: 1px solid #e0e0e0;
 
+}
+
+.title-show::after{
+    content: '\02C5';
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    font-weight: bold;
+    z-index: 10;
+    transform: rotate(180deg);
 }
 
 .content-show{
